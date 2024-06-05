@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package rate.limiter;
+
+option go_package = "github.com/alexeysamorodov/rate-limiter/api";
+
+service ExampleService {
+  rpc Ping (PingRequest) returns (PingResponse);
+}
+
+message PingRequest {
+}
+
+message PingResponse {
+  string message = 1;
+}

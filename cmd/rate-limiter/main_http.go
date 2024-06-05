@@ -21,7 +21,7 @@ func RateLimiterMiddleware(rl *ratelimiter.RPSRateLimiter) func(http.Handler) ht
 	}
 }
 
-func main() {
+func main2() {
 	rl := ratelimiter.NewRPSRateLimiter(2) // 2 запроса в секунду
 	defer rl.Stop()
 
