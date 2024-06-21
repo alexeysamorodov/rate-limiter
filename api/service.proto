@@ -2,10 +2,17 @@ syntax = "proto3";
 
 package rate.limiter;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/alexeysamorodov/rate-limiter/api";
 
 service ExampleService {
-  rpc Ping (PingRequest) returns (PingResponse);
+  rpc Ping (PingRequest) returns (PingResponse) {
+    option (google.api.http) = {
+      post: "/Ping"
+      body: "*"
+    };
+  }
 }
 
 message PingRequest {
