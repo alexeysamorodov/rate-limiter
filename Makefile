@@ -6,13 +6,9 @@ run-http:
 run-grpc:
 	go run cmd/rate-limiter/main_grpc.go
 
-.PHONY: gen-go
-gen-go:
-	protoc -I=api --go_out=internal/pb --go-grpc_out=internal/pb api/service.proto
-
 .PHONY: gen
 gen:
-	buf generate
+	protoc -I=api --go_out=gen --go-grpc_out=gen api/service.proto --go_opt=paths=source_relative --go-grpc_opt=paths=source_relative
 
 .PHONY: deps-go
 deps-go:

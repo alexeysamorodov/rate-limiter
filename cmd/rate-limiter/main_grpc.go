@@ -4,8 +4,8 @@ import (
 	"log"
 	"net"
 
+	pb "github.com/alexeysamorodov/rate-limiter/api"
 	ratelimiter "github.com/alexeysamorodov/rate-limiter/internal/app/rate-limiter"
-	pb "github.com/alexeysamorodov/rate-limiter/internal/pb/github.com/alexeysamorodov/rate-limiter/api"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
