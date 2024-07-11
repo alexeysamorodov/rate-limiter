@@ -52,4 +52,5 @@ func (l *RPSRateLimiter) Allow() bool {
 // Stop останавливает лимитатор скорости.
 func (l *RPSRateLimiter) Stop() {
 	close(l.quit)
+	close(l.requests)
 }

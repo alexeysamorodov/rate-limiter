@@ -12,6 +12,7 @@ import (
 
 func main() {
 	limiter := ratelimiter.NewRPSRateLimiter(1)
+	defer limiter.Stop()
 
 	// Создаем gRPC сервер с перехватчиком
 	server := grpc.NewServer(
